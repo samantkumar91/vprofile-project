@@ -6,6 +6,7 @@ RUN cd vprofile-repo && mvn install
 FROM tomcat:8-jre11
 
 RUN rm -rf /usr/local/tomcat/webapps/*
+RUN rm -rf rm -rf ~/.m2/repository/org/apache/
 
 COPY --from=BUILD_IMAGE vprofile-repo/target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
 
